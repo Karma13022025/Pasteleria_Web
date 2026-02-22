@@ -21,6 +21,15 @@ export default function App() {
 
   return (
     <div className="pagina-publica">
+      {/* 🧭 MENÚ DE NAVEGACIÓN FIJO */}
+      <nav className="navbar">
+        <div className="nav-logo">🍰 Pastelería Ximena</div>
+        <div className="nav-links">
+          <a href="#catalogo">Menú</a>
+          <a href="#galeria">Galería</a>
+          <a href="#testimonios">Reseñas</a>
+        </div>
+      </nav>
       <header className="hero-section">
         <div className="hero-contenido">
           <h1>Pastelería Ximena</h1>
@@ -59,7 +68,7 @@ export default function App() {
       </main>
 
       {/* 🎨 SECCIÓN 2.5: GALERÍA DE TRABAJOS PERSONALIZADOS */}
-      <section className="seccion-galeria">
+      <section id="galeria" className="seccion-galeria">
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <p className="subtitulo-galeria">
           ¿Tienes una idea especial en mente? Nosotros la hacemos realidad. 
@@ -78,7 +87,7 @@ export default function App() {
       </section>
 
       {/* ⭐ SECCIÓN 3: TESTIMONIOS */}
-      <section className="seccion-testimonios">
+      <section id="testimonios" className="seccion-testimonios">
         <h2 className="titulo-seccion">Lo que dicen nuestros clientes</h2>
         
         <div className="grid-testimonios">
@@ -107,6 +116,12 @@ export default function App() {
           <h3>Preguntas Frecuentes</h3>
           <p><strong>¿Cómo puedo hacer un pedido?</strong><br/>Todos los pedidos se realizan directamente en nuestra sucursal física para garantizar los detalles de tu diseño.</p>
           <p><strong>¿Con cuánto tiempo de anticipación debo pedir?</strong><br/>Recomendamos visitarnos con al menos 3 días de anticipación.</p>
+        </div>
+        {/* 📱 REDES SOCIALES */}
+        <div className="redes-sociales">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icono-red">📸 Instagram</a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icono-red">📘 Facebook</a>
+          <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="icono-red">🎵 TikTok</a>
         </div>
         <div className="copyright">
           <p>© 2026 Pastelería Ximena. Todos los derechos reservados.</p>

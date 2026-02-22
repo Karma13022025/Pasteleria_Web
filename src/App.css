@@ -338,3 +338,80 @@ body {
   transform: scale(1.03); /* Pequeño zoom al pasar el mouse */
   box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
 }
+
+/* --- NAVBAR FIJO (STICKY) --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px); /* Efecto cristal moderno */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para iPhone */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 15px rgba(216, 27, 96, 0.08);
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #d81b60;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d81b60;
+}
+
+/* Ajuste de la Navbar para celulares */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+  .nav-links {
+    gap: 15px;
+    font-size: 0.95rem;
+  }
+}
+
+/* --- REDES SOCIALES --- */
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px 0 20px 0;
+}
+
+.icono-red {
+  text-decoration: none;
+  color: #d81b60;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icono-red:hover {
+  transform: translateY(-4px);
+  background: #ff69b4;
+  color: white;
+}
