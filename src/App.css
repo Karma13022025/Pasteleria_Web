@@ -1,12 +1,19 @@
-/* --- DISEÑO DEL CATÁLOGO PÚBLICO --- */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+/* Importamos Playfair Display (Elegante para títulos) y Montserrat (Limpia para textos) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #fafafa;
   color: #333;
   scroll-behavior: smooth;
+}
+
+/* 👑 Títulos principales con Serif (Elegancia) */
+h1, h2, h3, .nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 /* Hero Section */
@@ -251,7 +258,7 @@ body {
 
 /* --- TESTIMONIOS --- */
 .seccion-testimonios {
-  padding: 60px 20px;
+  padding: 60px 10px;
   background-color: #fdf2f8; /* Un fondo rosita pastel muy suave */
   text-align: center;
 }
@@ -414,4 +421,34 @@ body {
   transform: translateY(-4px);
   background: #ff69b4;
   color: white;
+}
+
+/* --- BOTÓN DE WHATSAPP --- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366; /* El verde oficial de WhatsApp */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+}
+
+/* En celulares pequeñitos podemos ocultar el texto y dejar solo un icono si prefieres */
+@media (max-width: 480px) {
+  .whatsapp-btn span {
+    font-size: 0.9rem;
+  }
 }
