@@ -1,0 +1,340 @@
+/* --- DISEÑO DEL CATÁLOGO PÚBLICO --- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.6)), url('/images/header.jpg') center/cover;  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-contenido h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-contenido p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.btn-primario {
+  background: white;
+  color: #d81b60;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.btn-primario:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Catálogo */
+.contenedor-catalogo {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  text-align: center;
+  color: #d81b60;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+/* 👇 NUEVO CARRUSEL HORIZONTAL */
+.carrusel-pasteles {
+  display: flex;
+  overflow-x: auto;
+  /* Permite el scroll horizontal */
+  gap: 30px;
+  padding: 10px 5px 30px 5px;
+  /* Espacio para que no se corte la sombra */
+  scroll-snap-type: x mandatory;
+  /* Hace que el deslizamiento sea magnético */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Movimiento suave en iPhone */
+}
+
+/* Ocultar la barra de scroll fea en computadora, pero mantener la función */
+.carrusel-pasteles::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carrusel-pasteles::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+.tarjeta-pastel {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+
+  /* 👇 Reglas para que la tarjeta funcione en el carrusel */
+  min-width: 280px;
+  /* Ancho fijo para celular */
+  max-width: 320px;
+  /* Ancho máximo para computadora */
+  flex-shrink: 0;
+  /* Evita que las tarjetas se encojan */
+  scroll-snap-align: center;
+  /* Centra la tarjeta al soltar el dedo */
+}
+
+.tarjeta-pastel:hover {
+  transform: translateY(-5px);
+}
+
+/* --- CONTENEDOR Y FLECHAS DEL CARRUSEL --- */
+.carrusel-wrapper {
+  position: relative;
+  /* Para que las flechas floten tomando esto como referencia */
+  display: flex;
+  align-items: center;
+}
+
+.flecha-carrusel {
+  background: white;
+  color: #d81b60;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flecha-carrusel:hover {
+  background: #d81b60;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Posición exacta de cada flecha */
+.flecha-carrusel.izq {
+  left: -20px;
+}
+
+.flecha-carrusel.der {
+  right: -20px;
+}
+
+/* Magia Mobile-First: Ocultar flechas en celulares */
+@media (max-width: 768px) {
+  .flecha-carrusel {
+    display: none;
+  }
+
+  .carrusel-wrapper {
+    /* Quitamos el margen negativo en celular para que se vea limpio */
+    margin: 0;
+  }
+}
+
+.foto-pastel {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.info-pastel {
+  padding: 20px;
+}
+
+.info-pastel h3 {
+  margin: 0 0 10px 0;
+  color: #d81b60;
+}
+
+.desc {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.porciones {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.precio-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-pedir {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-pedir:hover {
+  background: #d81b60;
+}
+
+/* Footer */
+.footer-sencillo {
+  background: #fdf2f8;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.faq {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.faq h3 {
+  color: #d81b60;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.copyright {
+  color: #999;
+  font-size: 0.9rem;
+  border-top: 1px solid #fce4ec;
+  padding-top: 20px;
+}
+
+/* --- TESTIMONIOS --- */
+.seccion-testimonios {
+  padding: 60px 20px;
+  background-color: #fdf2f8; /* Un fondo rosita pastel muy suave */
+  text-align: center;
+}
+
+.grid-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tarjeta-testimonio {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.05);
+  transition: transform 0.3s;
+}
+
+.tarjeta-testimonio:hover {
+  transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+}
+
+.estrellas {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.tarjeta-testimonio p {
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tarjeta-testimonio h4 {
+  color: #d81b60;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* --- GALERÍA DE TRABAJOS PERSONALIZADOS --- */
+.seccion-galeria {
+  padding: 0px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.subtitulo-galeria {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-galeria {
+  display: grid;
+  /* En celular muestra 2 columnas, en compu muestra 3 */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .grid-galeria {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.foto-galeria {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Esto hace que la foto SIEMPRE sea cuadrada (estilo Instagram) */
+  object-fit: cover; /* Evita que la foto se apachurre */
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-galeria:hover {
+  transform: scale(1.03); /* Pequeño zoom al pasar el mouse */
+  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
+}
