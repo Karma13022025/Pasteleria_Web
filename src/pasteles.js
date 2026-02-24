@@ -3,34 +3,35 @@
 export const pastelesDb = [
   {
     id: 1,
-    nombre: "Nombre de tu Pastel 1",
+    nombre: "Pastel ",
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
-    porciones: "10-12 personas",
-    imagenUrl: '/images/id_1.webp'
+    porciones: "5 personas",
+    imagenUrl: '/images/Especialidades/id_1.webp'
   },
   {
     id: 2,
-    nombre: "Nombre de tu Pastel 2",
+    nombre: "Galletas Personalizadas",
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "15-20 personas",
-    imagenUrl: '/images/id_2.webp'
+    imagenUrl: '/images/Especialidades/galletas.webp'
   },
   {
     id: 3,
-    nombre: "Nombre de tu Pastel 3",
+    nombre: "Brownies",
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "20-25 personas",
-    imagenUrl: '/images/id_3.webp'
+    imagenUrl: '/images/Especialidades/brownies.webp'
   },
   {
     id: 4,
-    nombre: "Nombre de tu Pastel 3",
+    nombre: "Cupcakes personalizados",
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "20-25 personas",
-    imagenUrl: '/images/id_4.webp'
+    imagenUrl: '/images/Especialidades/cupcakes.webp'
   }
+  
 ];

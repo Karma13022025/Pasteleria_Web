@@ -1,92 +1,168 @@
-/* Importamos Playfair Display (Elegante para títulos) y Montserrat (Limpia para textos) */
+/* =========================================
+   🧁 TIPOGRAFÍA Y FUENTES
+   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;500;600&display=swap');
+
+/* =========================================
+   1. ESTILOS GLOBALES BASE
+   ========================================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Evita que el menú fijo tape los títulos al hacer clic */
+}
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #fafafa;
   color: #333;
-  scroll-behavior: smooth;
+  line-height: 1.6;
+  overflow-x: hidden; /* Previene que la página se mueva hacia los lados en celular */
 }
 
-/* 👑 Títulos principales con Serif (Elegancia) */
+/* Jerarquía de títulos elegantes */
 h1, h2, h3, .nav-logo {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: -0.5px;
+  margin-top: 0;
 }
 
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.6)), url('/images/header.jpg') center/cover;  height: 60vh;
+.titulo-seccion {
+  text-align: center;
+  color: #d81b60;
+  /* Tipografía fluida: Se adapta sola desde 1.8rem (móvil) hasta 2.5rem (compu) */
+  font-size: clamp(1.8rem, 4vw, 2.5rem); 
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 15px rgba(216, 27, 96, 0.08);
+  z-index: 1000;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Separación entre el logo y las letras */
+  font-size: 1.2rem;
+  color: #d81b60;
+}
+
+.logo-img {
+  height: 40px; /* Ajusta este número dependiendo de qué tan alto sea tu logo */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d81b60;
+}
+
+/* =========================================
+   3. PORTADA PRINCIPAL (HERO & OLA)
+   ========================================= */
+.hero-section {
   position: relative;
+  background: linear-gradient(rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.6)), url('/images/fondo_encabezado.jpg') center/cover;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   padding: 0 20px;
 }
+.hero-contenido {
+  margin-top: -80px; /* Esto jala todo el bloque hacia arriba. */
+  /* Juega con este número: -50px sube poquito, -120px sube mucho. */
+}
 
 .hero-contenido h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Crece y decrece mágicamente */
   margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-contenido p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   margin-bottom: 30px;
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.btn-primario {
-  background: white;
-  color: #d81b60;
-  padding: 12px 30px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  transition: transform 0.3s;
-  display: inline-block;
+.ola-decorativa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-.btn-primario:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.ola-decorativa svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
 }
 
-/* Catálogo */
+.ola-decorativa .relleno-ola {
+  fill: #fafafa;
+}
+
+/* =========================================
+   4. SECCIONES PRINCIPALES
+   ========================================= */
+
+/* --- Catálogo y Carrusel --- */
 .contenedor-catalogo {
   padding: 60px 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.titulo-seccion {
-  text-align: center;
-  color: #d81b60;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+.carrusel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-/* 👇 NUEVO CARRUSEL HORIZONTAL */
 .carrusel-pasteles {
   display: flex;
   overflow-x: auto;
-  /* Permite el scroll horizontal */
   gap: 30px;
   padding: 10px 5px 30px 5px;
-  /* Espacio para que no se corte la sombra */
   scroll-snap-type: x mandatory;
-  /* Hace que el deslizamiento sea magnético */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  /* Movimiento suave en iPhone */
 }
 
-/* Ocultar la barra de scroll fea en computadora, pero mantener la función */
 .carrusel-pasteles::-webkit-scrollbar {
   height: 8px;
 }
@@ -102,74 +178,14 @@ h1, h2, h3, .nav-logo {
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
-
-  /* 👇 Reglas para que la tarjeta funcione en el carrusel */
   min-width: 280px;
-  /* Ancho fijo para celular */
   max-width: 320px;
-  /* Ancho máximo para computadora */
   flex-shrink: 0;
-  /* Evita que las tarjetas se encojan */
   scroll-snap-align: center;
-  /* Centra la tarjeta al soltar el dedo */
 }
 
 .tarjeta-pastel:hover {
   transform: translateY(-5px);
-}
-
-/* --- CONTENEDOR Y FLECHAS DEL CARRUSEL --- */
-.carrusel-wrapper {
-  position: relative;
-  /* Para que las flechas floten tomando esto como referencia */
-  display: flex;
-  align-items: center;
-}
-
-.flecha-carrusel {
-  background: white;
-  color: #d81b60;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  z-index: 10;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flecha-carrusel:hover {
-  background: #d81b60;
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Posición exacta de cada flecha */
-.flecha-carrusel.izq {
-  left: -20px;
-}
-
-.flecha-carrusel.der {
-  right: -20px;
-}
-
-/* Magia Mobile-First: Ocultar flechas en celulares */
-@media (max-width: 768px) {
-  .flecha-carrusel {
-    display: none;
-  }
-
-  .carrusel-wrapper {
-    /* Quitamos el margen negativo en celular para que se vea limpio */
-    margin: 0;
-  }
 }
 
 .foto-pastel {
@@ -183,7 +199,7 @@ h1, h2, h3, .nav-logo {
 }
 
 .info-pastel h3 {
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
   color: #d81b60;
 }
 
@@ -211,56 +227,99 @@ h1, h2, h3, .nav-logo {
   color: #333;
 }
 
-.btn-pedir {
-  background: #ff69b4;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+/* --- Pasos para Pedir --- */
+.seccion-pasos {
+  padding: 0px 20px 60px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.btn-pedir:hover {
-  background: #d81b60;
+.grid-pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* Footer */
-.footer-sencillo {
+.tarjeta-paso {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.tarjeta-paso:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(216, 27, 96, 0.1);
+}
+
+.icono-paso {
+  font-size: 2.5rem;
   background: #fdf2f8;
-  padding: 40px 20px 20px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  box-shadow: inset 0 0 15px rgba(216, 27, 96, 0.05);
 }
 
-.faq {
-  max-width: 600px;
-  margin: 0 auto 30px;
-  text-align: left;
-}
-
-.faq h3 {
+.tarjeta-paso h3 {
   color: #d81b60;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.faq p {
-  color: #555;
   margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
-.copyright {
-  color: #999;
-  font-size: 0.9rem;
-  border-top: 1px solid #fce4ec;
-  padding-top: 20px;
+.tarjeta-paso p {
+  color: #666;
+  font-size: 1rem;
 }
 
-/* --- TESTIMONIOS --- */
+/* --- Galería --- */
+.seccion-galeria {
+  padding: 0px 20px 60px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.subtitulo-galeria {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.foto-galeria {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-galeria:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
+}
+
+/* --- Testimonios --- */
 .seccion-testimonios {
-  padding: 60px 10px;
-  background-color: #fdf2f8; /* Un fondo rosita pastel muy suave */
+  padding: 60px 20px;
+  background-color: #fdf2f8;
   text-align: center;
 }
 
@@ -281,7 +340,7 @@ h1, h2, h3, .nav-logo {
 }
 
 .tarjeta-testimonio:hover {
-  transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+  transform: translateY(-5px);
 }
 
 .estrellas {
@@ -293,117 +352,100 @@ h1, h2, h3, .nav-logo {
 .tarjeta-testimonio p {
   color: #555;
   font-style: italic;
-  line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .tarjeta-testimonio h4 {
   color: #d81b60;
   margin: 0;
-  font-weight: bold;
 }
 
-/* --- GALERÍA DE TRABAJOS PERSONALIZADOS --- */
-.seccion-galeria {
-  padding: 0px 20px;
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.subtitulo-galeria {
-  color: #666;
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid-galeria {
-  display: grid;
-  /* En celular muestra 2 columnas, en compu muestra 3 */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-@media (min-width: 768px) {
-  .grid-galeria {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-
-.foto-galeria {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* Esto hace que la foto SIEMPRE sea cuadrada (estilo Instagram) */
-  object-fit: cover; /* Evita que la foto se apachurre */
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.foto-galeria:hover {
-  transform: scale(1.03); /* Pequeño zoom al pasar el mouse */
-  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
-}
-
-/* --- NAVBAR FIJO (STICKY) --- */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px); /* Efecto cristal moderno */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para iPhone */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 2px 15px rgba(216, 27, 96, 0.08);
-  z-index: 1000;
-}
-
-.nav-logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+/* =========================================
+   5. BOTONES Y COMPONENTES FLOTANTES
+   ========================================= */
+.btn-primario {
+  background: white;
   color: #d81b60;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
+  padding: 12px 30px;
   text-decoration: none;
-  color: #555;
-  font-weight: 600;
-  transition: color 0.3s;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+  display: inline-block;
 }
 
-.nav-links a:hover {
+.btn-primario:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flecha-carrusel {
+  background: white;
   color: #d81b60;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Ajuste de la Navbar para celulares */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
-  }
-  .nav-links {
-    gap: 15px;
-    font-size: 0.95rem;
-  }
+.flecha-carrusel:hover {
+  background: #d81b60;
+  color: white;
+  transform: scale(1.1);
 }
 
-/* --- REDES SOCIALES --- */
+.flecha-carrusel.izq { left: -20px; }
+.flecha-carrusel.der { right: -20px; }
+
+/* Botón WhatsApp Fijo */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+}
+
+/* =========================================
+   6. FOOTER Y REDES SOCIALES
+   ========================================= */
+.footer-sencillo {
+  background: #fdf2f8;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
 .redes-sociales {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 30px 0 20px 0;
+  margin: 10px 0 30px 0;
 }
 
 .icono-red {
@@ -424,31 +466,68 @@ h1, h2, h3, .nav-logo {
   color: white;
 }
 
-/* --- BOTÓN DE WHATSAPP --- */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366; /* El verde oficial de WhatsApp */
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s ease;
+.copyright {
+  color: #999;
+  font-size: 0.9rem;
+  border-top: 1px solid #fce4ec;
+  padding-top: 20px;
 }
 
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-  background-color: #128c7e;
+/* --- Estilos para el Logo del Footer --- */
+.footer-logo-container {
+  margin-bottom: 25px; /* Espacio entre el logo y el botón de Instagram */
 }
 
-/* 3. Convierte el botón de WhatsApp en un círculo minimalista en celulares */
+.footer-logo {
+  height: 90px; /* Un poco más grande que el del menú superior para que luzca */
+  width: auto;
+  opacity: 0.9; /* Un toque ligeramente transparente para que se vea elegante */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+  opacity: 1;
+}
+
+/* =========================================
+   📱 RESPONSIVE DESIGN (MÓVIL Y TABLET)
+   ========================================= */
+
+@media (min-width: 768px) {
+  .grid-galeria {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flecha-carrusel {
+    display: none;
+  }
+  .carrusel-wrapper {
+    margin: 0;
+  }
+  .ola-decorativa svg {
+    height: 40px;
+  }
+}
+
 @media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+  .nav-links {
+    gap: 15px;
+    font-size: 0.95rem;
+  }
+  /* Ajuste para que el botón de WhatsApp no tape el texto del Footer */
+  .footer-sencillo {
+    padding-bottom: 90px;
+  }
+  /* Minimalismo en WhatsApp para celular */
   .whatsapp-btn {
     width: 60px;
     height: 60px;
@@ -458,98 +537,11 @@ h1, h2, h3, .nav-logo {
     justify-content: center;
     border-radius: 50%;
   }
-  
-  /* Ocultamos el texto largo... */
   .whatsapp-btn span {
     display: none; 
   }
-  
-  /* ...y ponemos solo el globito de diálogo centrado */
   .whatsapp-btn::after {
     content: '💬'; 
     font-size: 1.8rem;
   }
-  }
-
-  /* --- OLAS DECORATIVAS --- */
-.ola-decorativa {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.ola-decorativa svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 80px; /* Qué tan alta es la ola */
-}
-
-.ola-decorativa .relleno-ola {
-  fill: #fafafa; /* Este color es idéntico al fondo de tu página para que se mezcle perfecto */
-}
-
-/* En celular hacemos la ola un poquito más bajita para que no estorbe */
-@media (max-width: 768px) {
-  .ola-decorativa svg {
-    height: 40px;
-  }
-}
-
-/* --- CÓMO HACER TU PEDIDO (PASOS) --- */
-.seccion-pasos {
-  padding: 0px 20px 40px;
-  text-align: center;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.grid-pasos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.tarjeta-paso {
-  background: white;
-  padding: 40px 25px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.tarjeta-paso:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(216, 27, 96, 0.1);
-}
-
-.icono-paso {
-  font-size: 2.5rem;
-  background: #fdf2f8; /* El mismo rosita suave de tus testimonios */
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 25px;
-  box-shadow: inset 0 0 15px rgba(216, 27, 96, 0.05);
-}
-
-.tarjeta-paso h3 {
-  color: #d81b60;
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.tarjeta-paso p {
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
 }
