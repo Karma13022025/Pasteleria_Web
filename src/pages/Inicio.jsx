@@ -95,9 +95,9 @@ export default function Inicio() {
       <section className="seccion-galeria" data-aos="fade-up" style={{ paddingBottom: '40px' }}>
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <div className="grid-galeria">
-          <img src="/images/personalizado_1.webp" alt="Pastel personalizado temático" className="foto-galeria" />
-          <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500" alt="Pastel decorado con flores" className="foto-galeria" />
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500" alt="Pastel artesanal de cumpleaños" className="foto-galeria" />
+          <img src="/images/Personalizados/Pastel_vaca.webp" alt="Pastel personalizado temático animales" className="foto-galeria" />
+          <img src="/images/Personalizados/CupcakesMD.webp" alt="Cupcakes dia de las madres" className="foto-galeria" />
+          <img src="/images/Personalizados/beisbol.webp" alt="Pastel personalizado beisbol" className="foto-galeria" />
         </div>
         {/* 👇 Botón que los manda a la pantalla de galería completa */}
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
