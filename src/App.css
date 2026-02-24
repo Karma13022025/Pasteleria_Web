@@ -545,3 +545,75 @@ h1, h2, h3, .nav-logo {
     font-size: 1.8rem;
   }
 }
+
+/* --- CENTRAR LA ÚLTIMA FOTO DE GALERÍA EN CELULAR --- */
+@media (max-width: 767px) {
+  .grid-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Esto es lo que centra la foto "sobrante" */
+    gap: 15px;
+  }
+  
+  .foto-galeria {
+    /* Le decimos que cada foto ocupe la mitad de la pantalla menos el espacio de separación */
+    width: calc(50% - 8px); 
+  }
+}
+
+/* --- PANTALLA DE CONSTRUCCIÓN MINIMALISTA --- */
+.contenedor-minimalista {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fafafa; /* Un gris casi blanco, muy limpio */
+}
+
+.icono-sutil {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #d81b60;
+  /* Una animación de latido lentíiiiisima y elegante */
+  animation: fade-lento 4s infinite ease-in-out; 
+}
+
+@keyframes fade-lento {
+  0%, 100% { opacity: 0.3; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.titulo-minimalista {
+  font-size: 2.5rem;
+  font-weight: 300; /* Letra delgada para verse "Premium" */
+  color: #222;
+  margin-bottom: 15px;
+  letter-spacing: 2px; /* Más espacio entre letras = más elegancia */
+}
+
+.texto-minimalista {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 450px;
+  margin: 0 auto 40px auto;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.enlace-volver {
+  color: #777;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Letras mayúsculas pequeñas */
+}
+
+.enlace-volver:hover {
+  color: #d81b60;
+  border-bottom: 1px solid #d81b60;
+}
