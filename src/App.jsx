@@ -2,21 +2,23 @@ import React, { useRef, useEffect } from 'react';
 import './App.css';
 import { pastelesDb } from './pasteles'; 
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Importamos los estilos de la animación
+import 'aos/dist/aos.css'; 
 
 export default function App() {
   const carruselRef = useRef(null);
 
-  // Inicializamos las animaciones
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Qué tan lento aparece (1 segundo)
-      once: true,     // Que solo se anime la primera vez que bajas
+      duration: 1000, 
+      once: true,     
     });
   }, []);
 
   const moverIzq = () => carruselRef.current?.scrollBy({ left: -340, behavior: 'smooth' });
   const moverDer = () => carruselRef.current?.scrollBy({ left: 340, behavior: 'smooth' });
+
+  // 👇 Mejora 1: Creamos un mensaje predeterminado para WhatsApp (codificado para URL)
+  const mensajeWhatsApp = encodeURI("¡Hola Pastelería Ximena! Vi su página web y me gustaría pedir información sobre sus pasteles. 🍰");
 
   return (
     <div className="pagina-publica">
@@ -44,7 +46,7 @@ export default function App() {
           <div className="carrusel-pasteles" ref={carruselRef}>
             {pastelesDb.map((pastel) => (
               <div key={pastel.id} className="tarjeta-pastel">
-                <img src={pastel.imagenUrl} alt={pastel.nombre} className="foto-pastel" />
+                <img src={pastel.imagenUrl} alt={`Fotografía de pastel ${pastel.nombre}`} className="foto-pastel" />
                 <div className="info-pastel">
                   <h3>{pastel.nombre}</h3>
                   <p className="desc">{pastel.descripcion}</p>
@@ -63,9 +65,10 @@ export default function App() {
       <section id="galeria" className="seccion-galeria" data-aos="fade-right">
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <div className="grid-galeria">
-          <img src="./images/personalizado_1.jpg" className="foto-galeria" />
-          <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500" className="foto-galeria" />
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500" className="foto-galeria" />
+          {/* 👇 Mejora 3 y 4: Rutas corregidas (sin el punto) y con su texto "alt" para SEO */}
+          <img src="/images/personalizado_1.jpg" alt="Pastel personalizado temático" className="foto-galeria" />
+          <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500" alt="Pastel decorado con flores" className="foto-galeria" />
+          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500" alt="Pastel artesanal de cumpleaños" className="foto-galeria" />
         </div>
       </section>
 
@@ -85,21 +88,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* 🟢 BOTÓN DE WHATSAPP FLOTANTE */}
+      {/* 👇 Mejora 1: Botón de WhatsApp con mensaje pre-cargado */}
       <a 
-        href="https://wa.me/+528442075351" 
+        href={`https://wa.me/528442075351?text=${mensajeWhatsApp}`} 
         className="whatsapp-btn" 
         target="_blank" 
         rel="noreferrer"
       >
-        <span>Preguntar por WhatsApp</span>
+        <span>💬 Preguntar por WhatsApp</span>
       </a>
 
       <footer className="footer-sencillo">
         <div className="redes-sociales">
-          <a href="https://www.instagram.com/amenas_pasteleria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="icono-red">📸 Instagram</a>
+          <a href="https://www.instagram.com/amenas_pasteleria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="icono-red">📸 Instagram</a>
         </div>
-        <p>© 2026 Pastelería Ximena.</p>
+        {/* 👇 Mejora 2: El año ahora se calcula automáticamente */}
+        <p>© {new Date().getFullYear()} Pastelería Ximena. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

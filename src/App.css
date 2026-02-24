@@ -446,9 +446,26 @@ h1, h2, h3, .nav-logo {
   background-color: #128c7e;
 }
 
-/* En celulares pequeñitos podemos ocultar el texto y dejar solo un icono si prefieres */
-@media (max-width: 480px) {
-  .whatsapp-btn span {
-    font-size: 0.9rem;
+/* 3. Convierte el botón de WhatsApp en un círculo minimalista en celulares */
+@media (max-width: 600px) {
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    bottom: 20px;
+    right: 20px;
+    justify-content: center;
+    border-radius: 50%;
   }
-}
+  
+  /* Ocultamos el texto largo... */
+  .whatsapp-btn span {
+    display: none; 
+  }
+  
+  /* ...y ponemos solo el globito de diálogo centrado */
+  .whatsapp-btn::after {
+    content: '💬'; 
+    font-size: 1.8rem;
+  }
+  }
