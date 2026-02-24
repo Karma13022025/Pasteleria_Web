@@ -7,7 +7,7 @@ export const pastelesDb = [
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "10-12 personas",
-    imagenUrl: './images/id_1.jpg'
+    imagenUrl: '/images/id_1.webp'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const pastelesDb = [
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "15-20 personas",
-    imagenUrl: './images/id_2.jpg'
+    imagenUrl: '/images/id_2.webp'
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const pastelesDb = [
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "20-25 personas",
-    imagenUrl: './images/id_3.jpg'
+    imagenUrl: '/images/id_3.webp'
   },
   {
     id: 4,
@@ -31,6 +31,6 @@ export const pastelesDb = [
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "20-25 personas",
-    imagenUrl: './images/id_4.jpg'
+    imagenUrl: '/images/id_4.webp'
   }
 ];

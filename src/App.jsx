@@ -66,7 +66,7 @@ export default function App() {
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <div className="grid-galeria">
           {/* 👇 Mejora 3 y 4: Rutas corregidas (sin el punto) y con su texto "alt" para SEO */}
-          <img src="/images/personalizado_1.jpg" alt="Pastel personalizado temático" className="foto-galeria" />
+          <img src="/images/personalizado_1.webp" alt="Pastel personalizado temático" className="foto-galeria" />
           <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500" alt="Pastel decorado con flores" className="foto-galeria" />
           <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500" alt="Pastel artesanal de cumpleaños" className="foto-galeria" />
         </div>
