@@ -617,3 +617,18 @@ h1, h2, h3, .nav-logo {
   color: #d81b60;
   border-bottom: 1px solid #d81b60;
 }
+
+.hero-contenido h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  /* 👇 Agrega esta línea */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.hero-contenido p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  /* 👇 Y agrega estas dos líneas */
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  font-weight: 500; /* Hace la letra un poquitito más gruesa para que lea mejor */
+}
