@@ -37,6 +37,11 @@ export default function App() {
           <p>Horneando momentos inolvidables con los mejores ingredientes.</p>
           <a href="#catalogo" className="btn-primario">Ver Catálogo</a>
         </div>
+        <div className="ola-decorativa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="relleno-ola"></path>
+          </svg>
+        </div>
       </header>
 
       <main id="catalogo" className="contenedor-catalogo" data-aos="fade-up">
@@ -84,6 +89,31 @@ export default function App() {
             <div className="estrellas">⭐⭐⭐⭐⭐</div>
             <p>"El pan súper esponjosito y húmedo."</p>
             <h4>- Carlos L.</h4>
+          </div>
+        </div>
+      </section>
+
+            {/* 👣 SECCIÓN: CÓMO HACER TU PEDIDO */}
+      <section className="seccion-pasos" data-aos="fade-up">
+        <h2 className="titulo-seccion">¿Cómo hacer tu pedido?</h2>
+        
+        <div className="grid-pasos">
+          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="100">
+            <div className="icono-paso">🎂</div>
+            <h3>1. Elige tu diseño</h3>
+            <p>Revisa nuestro menú o mándanos una foto con la idea que tienes en mente para tu evento.</p>
+          </div>
+          
+          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="200">
+            <div className="icono-paso">💬</div>
+            <h3>2. Escríbenos</h3>
+            <p>Contáctanos por WhatsApp para checar disponibilidad, afinar detalles y confirmar tu pedido.</p>
+          </div>
+          
+          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="300">
+            <div className="icono-paso">📍</div>
+            <h3>3. Recoge y disfruta</h3>
+            <p>Pasa por tu pastel directamente a nuestra sucursal el día de tu evento. ¡Listo para sorprender!</p>
           </div>
         </div>
       </section>
