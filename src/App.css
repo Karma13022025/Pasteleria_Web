@@ -661,3 +661,62 @@ h1, h2, h3, .nav-logo {
   color: white;
   box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
 }
+
+/* --- BANNER COTIZADOR EN INICIO --- */
+.banner-cotizador {
+  background-color: #d81b60;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 40px auto;
+  border-radius: 15px;
+  max-width: 1000px;
+  box-shadow: 0 10px 20px rgba(216, 27, 96, 0.2);
+}
+
+.banner-cotizador h2 { margin-bottom: 10px; font-size: 2rem; }
+.banner-cotizador p { margin-bottom: 25px; font-size: 1.1rem; opacity: 0.9; }
+
+.btn-banner {
+  background-color: white;
+  color: #d81b60;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.btn-banner:hover { transform: scale(1.05); }
+
+/* --- FORMULARIO COTIZADOR --- */
+.contenedor-cotizador {
+  max-width: 600px;
+  margin: 40px auto 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.formulario-pastel { display: flex; flex-direction: column; gap: 20px; }
+
+.grupo-input { display: flex; flex-direction: column; text-align: left; }
+.grupo-input label { font-weight: bold; color: #333; margin-bottom: 8px; font-size: 0.95rem; }
+
+.grupo-input input, .grupo-input select, .grupo-input textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+}
+
+.grupo-input input:focus, .grupo-input select:focus, .grupo-input textarea:focus {
+  outline: none;
+  border-color: #d81b60;
+  background-color: white;
+}

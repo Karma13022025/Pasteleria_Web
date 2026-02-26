@@ -36,6 +36,7 @@ export default function Inicio() {
         <div className="hero-contenido" data-aos="zoom-in" style={{marginTop: '-80px'}}>
           <h1>Amena's Pastelería</h1>
           <p>Horneando momentos inolvidables con los mejores ingredientes.</p>
+          <Link to="/cotizar" className="btn-primario btn-latido">✨ Armar mi pastel</Link>
           
         </div>
         <div className="ola-decorativa">
@@ -68,6 +69,13 @@ export default function Inicio() {
           <button className="flecha-carrusel der" onClick={moverDer}>❯</button>
         </div>
       </main>
+
+      {/* --- BANNER COTIZADOR --- */}
+      <section className="banner-cotizador" data-aos="fade-up">
+        <h2>¿Tienes un diseño único en mente? 💡</h2>
+        <p>Nosotros horneamos tus sueños. Personaliza el tamaño, sabor y diseño de tu pastel ideal.</p>
+        <Link to="/cotizar" className="btn-banner">Crear pedido personalizado</Link>
+      </section>
 
       {/* --- CÓMO PEDIR --- */}
       <section className="seccion-pasos" data-aos="fade-up">
