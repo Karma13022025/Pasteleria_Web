@@ -16,6 +16,28 @@ export default function Inicio() {
 
   const mensajeWhatsApp = encodeURI("¡Hola Amena's Pastelería! Vi su página web y me gustaría pedir información. 🍰");
 
+  // Datos de reseñas de clientes
+  const resenasDb = [
+    {
+      id: 1,
+      nombre: "Ana Laura T.",
+      texto: "¡El pastel de mi hijo quedó increíble! No solo el diseño de Cars estaba idéntico a lo que pedí, sino que el pan de chocolate estaba súper suavecito. Súper recomendados.",
+      estrellas: "⭐⭐⭐⭐⭐"
+    },
+    {
+      id: 2,
+      nombre: "Carlos M.",
+      texto: "Pedimos una caja de cupcakes personalizados para un aniversario y superaron nuestras expectativas. La presentación impecable y el betún de queso crema es el mejor que he probado.",
+      estrellas: "⭐⭐⭐⭐⭐"
+    },
+    {
+      id: 3,
+      nombre: "Valeria G.",
+      texto: "Excelente servicio desde la cotización hasta la entrega. El pastel de bodas quedó hermoso, súper elegante y todos los invitados nos preguntaron de dónde era.",
+      estrellas: "⭐⭐⭐⭐⭐"
+    }
+  ];
+
   return (
     <div className="pagina-publica">
       {/* --- NAVBAR --- */}
@@ -27,7 +49,7 @@ export default function Inicio() {
         <div className="nav-links">
           <a href="#catalogo">Menú</a>
           <Link to="/galeria">Galería</Link> 
-          <a href="#testimonios">Reseñas</a>
+          <a href="#resenas">Reseñas</a>
         </div>
       </nav>
 
@@ -120,20 +142,18 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* --- TESTIMONIOS --- */}
-      <section id="testimonios" className="seccion-testimonios" data-aos="fade-up">
+{/* --- SECCIÓN DE RESEÑAS (NUEVO) --- */}
+      <section className="seccion-resenas" id="resenas" data-aos="fade-up">
         <h2 className="titulo-seccion">Lo que dicen nuestros clientes</h2>
-        <div className="grid-testimonios">
-          <div className="tarjeta-testimonio">
-            <div className="estrellas">⭐⭐⭐⭐⭐</div>
-            <p>"El mejor pastel de Red Velvet que he probado."</p>
-            <h4>- Mariana G.</h4>
-          </div>
-          <div className="tarjeta-testimonio">
-            <div className="estrellas">⭐⭐⭐⭐⭐</div>
-            <p>"El pan súper esponjosito y húmedo."</p>
-            <h4>- Carlos L.</h4>
-          </div>
+        
+        <div className="contenedor-tarjetas">
+          {resenasDb.map((resena) => (
+            <div key={resena.id} className="tarjeta-resena" data-aos="flip-up">
+              <div className="estrellas-resena">{resena.estrellas}</div>
+              <p className="texto-resena">"{resena.texto}"</p>
+              <p className="autor-resena">- {resena.nombre}</p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -5,8 +5,10 @@ import 'aos/dist/aos.css';
 import { galeriaDb } from '../Galeria'; 
 
 export default function Galeria() {
-  // 👈 ESTO ES NUEVO: Aquí guardamos qué filtro eligió el cliente (por defecto es 'Todos')
   const [filtro, setFiltro] = useState('Todos');
+  
+  // 👈 NUEVO: Memoria para saber qué foto está en pantalla completa (null significa que ninguna)
+  const [fotoAmpliada, setFotoAmpliada] = useState(null); 
   
   useEffect(() => {
     window.scrollTo(0, 0); 
@@ -15,7 +17,6 @@ export default function Galeria() {
 
   const mensajeWhatsApp = encodeURI("¡Hola Amena's Pastelería! Vi una foto en su galería y me encantaría cotizar un pastel así. ✨");
 
-  // 👈 ESTO ES NUEVO: La computadora decide qué fotos mostrar basada en el botón
   const fotosFiltradas = filtro === 'Todos' 
     ? galeriaDb 
     : galeriaDb.filter(foto => foto.categoria === filtro);
@@ -35,19 +36,16 @@ export default function Galeria() {
       <header className="seccion-galeria" style={{ paddingTop: '30px', paddingBottom: '60px' }} data-aos="fade-up">
         <h1 className="titulo-seccion">Nuestro Portafolio</h1>
         <p className="subtitulo-galeria">
-          Explora algunos de nuestros diseños personalizados. ¡Si ves algo que te gusta, tómale captura y mándanos un WhatsApp!
+          Explora algunos de nuestros diseños personalizados. ¡Si ves algo que te gusta, dale clic para verlo a detalle!
         </p>
 
-        {/* 👈 ESTO ES NUEVO: Tus botones de filtro */}
         <div className="filtros-galeria">
           <button className={filtro === 'Todos' ? 'btn-filtro activo' : 'btn-filtro'} onClick={() => setFiltro('Todos')}>Todos</button>
           <button className={filtro === 'pasteles' ? 'btn-filtro activo' : 'btn-filtro'} onClick={() => setFiltro('pasteles')}>Pasteles</button>
           <button className={filtro === 'galletas' ? 'btn-filtro activo' : 'btn-filtro'} onClick={() => setFiltro('galletas')}>Galletas</button>
           <button className={filtro === 'cupcakes' ? 'btn-filtro activo' : 'btn-filtro'} onClick={() => setFiltro('cupcakes')}>Cupcakes</button>
-          <button className={filtro === 'brownies' ? 'btn-filtro activo' : 'btn-filtro'} onClick={() => setFiltro('brownies')}>Brownies</button>
         </div>
 
-        {/* 👇 Fíjate cómo ahora usamos "fotosFiltradas" en lugar de "galeriaDb" */}
         <div className="grid-galeria" style={{ marginTop: '40px' }}>
           {fotosFiltradas.map((foto, index) => (
             <img 
@@ -56,6 +54,8 @@ export default function Galeria() {
               alt={foto.alt} 
               className="foto-galeria" 
               data-aos="zoom-in" 
+              // 👈 NUEVO: Al darle clic, guardamos esta foto en la memoria
+              onClick={() => setFotoAmpliada(foto)} 
             />
           ))}
         </div>
@@ -64,6 +64,15 @@ export default function Galeria() {
       <a href={`https://wa.me/528442075351?text=${mensajeWhatsApp}`} className="whatsapp-btn" target="_blank" rel="noreferrer">
         <span>💬 Preguntar por WhatsApp</span>
       </a>
+
+      {/* 👈 NUEVO: EL LIGHTBOX (Caja de luz flotante) */}
+      {/* Esto solo aparece si "fotoAmpliada" tiene una foto guardada */}
+      {fotoAmpliada && (
+        <div className="lightbox-fondo" onClick={() => setFotoAmpliada(null)}>
+          <span className="lightbox-cerrar">&times;</span>
+          <img src={fotoAmpliada.imagenUrl} alt={fotoAmpliada.alt} className="lightbox-imagen-grande" />
+        </div>
+      )}
 
       <footer className="footer-sencillo">
         <div className="footer-logo-container" style={{ marginBottom: '25px' }}>

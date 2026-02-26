@@ -737,3 +737,98 @@ h1, h2, h3, .nav-logo {
   border-color: #d81b60;
   background-color: white;
 }
+
+/* --- LIGHTBOX (ZOOM FOTOS GALERÍA) --- */
+.lightbox-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Esto asegura que tape hasta la barra de navegación */
+  cursor: zoom-out; /* El mouse se vuelve una lupa con un "-" */
+}
+
+.lightbox-imagen-grande {
+  max-width: 90%;
+  max-height: 90vh; /* Para que nunca se salga de la pantalla del celular */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* Animación súper suave al abrir */
+  animation: zoom-suave 0.3s ease-out; 
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lightbox-cerrar:hover {
+  color: #d81b60; /* Se pinta de rosa al pasar el mouse */
+}
+
+@keyframes zoom-suave {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- SECCIÓN DE RESEÑAS --- */
+.seccion-resenas {
+  background-color: #fafafa; /* Un gris muuuy clarito para separar secciones */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  flex-wrap: wrap; /* Para que en celular se pongan una debajo de la otra */
+}
+
+.tarjeta-resena {
+  background-color: white;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  width: 300px; /* Tamaño fijo para que se vean uniformes */
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-resena:hover {
+  transform: translateY(-10px); /* Se levantan un poquito al pasar el mouse */
+  box-shadow: 0 10px 25px rgba(216, 27, 96, 0.15); /* Sombra rosada */
+}
+
+.estrellas-resena {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.texto-resena {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic; /* Letra cursiva para que parezca una cita */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.autor-resena {
+  font-family: 'Playfair Display', serif; /* La letra elegante */
+  font-weight: 600;
+  color: #d81b60;
+  font-size: 1.1rem;
+}
