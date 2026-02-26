@@ -14,9 +14,9 @@ export default function App() {
         <Route path="/" element={<Inicio />} />
         
         {/* Nueva pantalla de portafolio */}
-        <Route path="/galeria" element={<Construccion />} />
+        <Route path="/galeria" element={<Galeria />} />
 
-        <Route path="/mi-galeria" element={<Galeria />} />
+        <Route path="/construccion" element={<Construccion />} />
 
         <Route path="/cotizar" element={<Cotizador />} />
       </Routes>

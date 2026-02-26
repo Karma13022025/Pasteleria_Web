@@ -70,11 +70,18 @@ export default function Inicio() {
         </div>
       </main>
 
-      {/* --- BANNER COTIZADOR --- */}
-      <section className="banner-cotizador" data-aos="fade-up">
-        <h2>¿Tienes un diseño único en mente? 💡</h2>
-        <p>Nosotros horneamos tus sueños. Personaliza el tamaño, sabor y diseño de tu pastel ideal.</p>
-        <Link to="/cotizar" className="btn-banner">Crear pedido personalizado</Link>
+{/* --- SECCIÓN COTIZAR (MINIMALISTA) --- */}
+      <section className="seccion-cotizar-minimalista" data-aos="fade-up">
+        <hr className="linea-divisora" />
+        
+        <h2 className="titulo-minimalista-cotizar">¿Tienes un diseño único en mente?</h2>
+        <p className="texto-minimalista-cotizar">Nosotros horneamos tus sueños. Personaliza el tamaño, sabor y diseño de tu pastel ideal.</p>
+        
+        <Link to="/cotizar" className="btn-primario" style={{ marginTop: '10px', padding: '15px 35px' }}>
+          ✨ Crear pedido personalizado
+        </Link>
+        
+        <hr className="linea-divisora-inferior" />
       </section>
 
       {/* --- CÓMO PEDIR --- */}
@@ -109,7 +116,7 @@ export default function Inicio() {
         </div>
         {/* 👇 Botón que los manda a la pantalla de galería completa */}
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Link to="/galeria" className="btn-primario">Ver más diseños</Link>
+          <Link to="/Galeria" className="btn-primario">Ver más diseños</Link>
         </div>
       </section>
 

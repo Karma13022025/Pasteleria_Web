@@ -662,34 +662,47 @@ h1, h2, h3, .nav-logo {
   box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
 }
 
-/* --- BANNER COTIZADOR EN INICIO --- */
-.banner-cotizador {
-  background-color: #d81b60;
-  color: white;
+/* --- SECCIÓN COTIZAR MINIMALISTA (INICIO) --- */
+.seccion-cotizar-minimalista {
   text-align: center;
-  padding: 50px 20px;
-  margin: 40px auto;
-  border-radius: 15px;
-  max-width: 1000px;
-  box-shadow: 0 10px 20px rgba(216, 27, 96, 0.2);
+  padding: 0px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: transparent; /* Sin fondos, puro espacio limpio */
 }
 
-.banner-cotizador h2 { margin-bottom: 10px; font-size: 2rem; }
-.banner-cotizador p { margin-bottom: 25px; font-size: 1.1rem; opacity: 0.9; }
-
-.btn-banner {
-  background-color: white;
-  color: #d81b60;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: transform 0.3s ease;
-  display: inline-block;
+/* Líneas sutiles para separar la sección sin ser agresivas */
+.linea-divisora {
+  border: none;
+  height: 1px;
+  background-color: #eaeaea; 
+  width: 50%; /* La línea no ocupa toda la pantalla, solo el centro */
+  margin: 0 auto 50px auto;
 }
-.btn-banner:hover { transform: scale(1.05); }
 
+.linea-divisora-inferior {
+  border: none;
+  height: 1px;
+  background-color: #eaeaea; 
+  width: 50%;
+  margin: 60px auto 0 auto;
+}
+
+.titulo-minimalista-cotizar {
+  font-size: 2.2rem;
+  color: #222;
+  font-weight: 300; /* Letra más delgada para verse Premium */
+  margin-bottom: 15px;
+  letter-spacing: 1px; /* Separar un poco las letras da un toque de elegancia */
+}
+
+.texto-minimalista-cotizar {
+  font-size: 1.15rem;
+  color: #777; /* Gris suave para que no compita con el título */
+  margin-bottom: 35px;
+  font-weight: 300;
+  line-height: 1.6;
+}
 /* --- FORMULARIO COTIZADOR --- */
 .contenedor-cotizador {
   max-width: 600px;
