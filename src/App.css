@@ -216,31 +216,16 @@ h1, h2, h3, .nav-logo {
 .info-pastel h3 {
   margin-bottom: 10px;
   color: #d81b60;
+  text-align: center;
 }
 
 .desc {
   color: #666;
   font-size: 0.95rem;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.porciones {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-}
-
-.precio-fila {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.precio {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #333;
-}
 
 /* --- Pasos para Pedir --- */
 .seccion-pasos {
@@ -490,7 +475,7 @@ h1, h2, h3, .nav-logo {
 
 /* --- Estilos para el Logo del Footer --- */
 .footer-logo-container {
-  margin-bottom: 25px; /* Espacio entre el logo y el botón de Instagram */
+  margin-bottom: 0px; /* Espacio entre el logo y el botón de Instagram */
 }
 
 .footer-logo {
@@ -853,4 +838,115 @@ h1, h2, h3, .nav-logo {
   font-weight: 600;
   color: #d81b60;
   font-size: 1.1rem;
+}
+
+.advertencia-betun {
+  background-color: #fff4f7; /* Un rosa muy clarito */
+  border-left: 4px solid #d81b60; /* La línea rosa de tu marca */
+  color: #555;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+.advertencia-betun strong {
+  color: #d81b60;
+}
+
+/* --- FOOTER DOS COLUMNAS --- */
+.footer-sencillo {
+  background-color: #fff;
+  padding: 40px 20px;
+  border-top: 1px solid #eee; /* Una línea sutil para separarlo del contenido */
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Permite que se apilen en celulares */
+  gap: 30px;
+}
+
+.footer-izq {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 250px;
+}
+
+.footer-der {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 250px;
+}
+
+/* El cuadrito del mapa */
+.mapa-cuadrado {
+  width: 350px;
+  height: 260px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  background-color: #f8f8f8;
+}
+
+/* La capa blanca semitransparente con el texto */
+.mapa-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2; /* Para que quede arriba del mapa */
+}
+
+.icono-pin {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.mapa-overlay p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.mapa-overlay strong {
+  color: #d81b60; /* Tu color rosa */
+  font-size: 1.1rem;
+}
+
+/* El iframe de fondo */
+.mapa-cuadrado iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* RESPONSIVE: Qué pasa en celulares */
+@media (max-width: 768px) {
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-der {
+    justify-content: center;
+  }
 }

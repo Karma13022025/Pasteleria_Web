@@ -10,7 +10,7 @@ export default function Cotizador() {
     const [producto, setProducto] = useState('Pastel');
     const [tamano, setTamano] = useState('Chico (10 a 15 personas)');
     const [saborPan, setSaborPan] = useState('Vainilla');
-    const [saborBetun, setSaborBetun] = useState('Queso Crema');
+    const [saborBetun, setSaborBetun] = useState('Chantilly');
     const [cantidad, setCantidad] = useState('');
     const [fecha, setFecha] = useState('');
     const [idea, setIdea] = useState('');
@@ -76,10 +76,9 @@ export default function Cotizador() {
                             <div className="grupo-input">
                                 <label>2. Tamaño / Porciones</label>
                                 <select value={tamano} onChange={(e) => setTamano(e.target.value)}>
-                                    <option value="Mini (2 a 4 personas)">Mini (2 a 4 personas)</option>
-                                    <option value="Chico (10 a 15 personas)">Chico (10 a 15 personas)</option>
-                                    <option value="Mediano (20 a 25 personas)">Mediano (20 a 25 personas)</option>
-                                    <option value="Grande (30+ personas)">Grande (30+ personas)</option>
+                                    <option value="Chico ( 5 personas)">Chico (5 personas)</option>
+                                    <option value="Mediano (10 - 12 personas)">Mediano (10 - 12 personas)</option>
+                                    <option value="Grande (25 a 30 personas)">Grande (25 a 30 personas)</option>
                                 </select>
                             </div>
                             <div className="grupo-input">
@@ -94,10 +93,16 @@ export default function Cotizador() {
                             <div className="grupo-input">
                                 <label>4. Sabor del Betún</label>
                                 <select value={saborBetun} onChange={(e) => setSaborBetun(e.target.value)}>
-                                    <option value="Queso Crema">Queso Crema</option>
-                                    <option value="Mantequilla">Mantequilla</option>
+                                    <option value="Chantilly">Chantilly</option>
+                                    <option value="Mantequilla">Mantequilla (Buttercream)</option>
                                     <option value="Chocolate">Chocolate</option>
+                                    <option value="Philadelphia">Philadelphia (Queso Crema)</option>
                                 </select>
+                                {saborBetun === 'Philadelphia' && (
+                                    <p className="advertencia-betun">
+                                        ⚠️ <strong>Nota:</strong> Por su textura artesanal y suave, este betún se recomienda para diseños sencillos o rústicos. Si tu diseño es muy complejo, te asesoraremos para elegir la mejor opción.
+                                    </p>
+                                )}
                             </div>
                         </>
                     ) : (
