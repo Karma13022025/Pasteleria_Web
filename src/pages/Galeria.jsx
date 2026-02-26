@@ -7,7 +7,6 @@ import { galeriaDb } from '../Galeria'; // 👈 Importamos tu nueva base de dato
 export default function Galeria() {
   
   useEffect(() => {
-    // Al entrar a la galería, forzamos que inicie hasta arriba
     window.scrollTo(0, 0); 
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -28,7 +27,7 @@ export default function Galeria() {
       </nav>
 
       {/* --- ENCABEZADO DE GALERÍA --- */}
-      <header className="seccion-galeria" style={{ paddingTop: '80px', paddingBottom: '60px' }} data-aos="fade-up">
+      <header className="seccion-galeria" style={{ paddingTop: '50px', paddingBottom: '60px' }} data-aos="fade-up">
         <h1 className="titulo-seccion">Nuestro Portafolio</h1>
         <p className="subtitulo-galeria">
           Explora algunos de nuestros diseños personalizados. Cada pastel es único y horneado especialmente para ti. Si ves algo que te gusta, ¡tómale captura y mándanos un WhatsApp!

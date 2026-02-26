@@ -51,7 +51,7 @@ export default function Inicio() {
         <div className="carrusel-wrapper">
           <button className="flecha-carrusel izq" onClick={moverIzq}>❮</button>
           <div className="carrusel-pasteles" ref={carruselRef}>
-            {pastelesDb.map((pastel) => (
+            {especialidadesDb.map((pastel) => (
               <div key={pastel.id} className="tarjeta-pastel">
                 <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" />
                 <div className="info-pastel">
