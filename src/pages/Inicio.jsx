@@ -76,7 +76,7 @@ export default function Inicio() {
           <div className="carrusel-pasteles" ref={carruselRef}>
             {especialidadesDb.map((pastel) => (
               <div key={pastel.id} className="tarjeta-pastel">
-                <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" />
+                <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" loading="lazy"/>
                 <div className="info-pastel">
                   <h3>{pastel.nombre}</h3>
                   <p className="desc">{pastel.descripcion}</p>
@@ -132,9 +132,9 @@ export default function Inicio() {
       <section className="seccion-galeria" data-aos="fade-up" style={{ paddingBottom: '40px' }}>
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <div className="grid-galeria">
-          <img src="/images/Personalizados/Pastel_vaca.webp" alt="Pastel personalizado temático animales" className="foto-galeria" />
-          <img src="/images/Personalizados/CupcakesMD.webp" alt="Cupcakes dia de las madres" className="foto-galeria" />
-          <img src="/images/Personalizados/beisbol.webp" alt="Pastel personalizado beisbol" className="foto-galeria" />
+          <img src="/images/Personalizados/Pastel_vaca.webp" alt="Pastel personalizado temático animales" className="foto-galeria" loading="lazy"/>
+          <img src="/images/Personalizados/CupcakesMD.webp" alt="Cupcakes dia de las madres" className="foto-galeria" loading="lazy"/>
+          <img src="/images/Personalizados/beisbol.webp" alt="Pastel personalizado beisbol" className="foto-galeria" loading="lazy"/>
         </div>
         {/* 👇 Botón que los manda a la pantalla de galería completa */}
         <div style={{ textAlign: 'center', marginTop: '40px' }}>

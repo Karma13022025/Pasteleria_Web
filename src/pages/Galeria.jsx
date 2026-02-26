@@ -54,8 +54,8 @@ export default function Galeria() {
               alt={foto.alt} 
               className="foto-galeria" 
               data-aos="zoom-in" 
-              // 👈 NUEVO: Al darle clic, guardamos esta foto en la memoria
               onClick={() => setFotoAmpliada(foto)} 
+              loading="lazy"
             />
           ))}
         </div>

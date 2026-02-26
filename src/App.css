@@ -648,33 +648,44 @@ h1, h2, h3, .nav-logo {
   font-weight: 500; /* Hace la letra un poquitito más gruesa para que lea mejor */
 }
 
-/* --- BOTONES DE FILTRO EN GALERÍA --- */
+/* --- FILTROS ESTILO BURBUJA 3D --- */
 .filtros-galeria {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
-  flex-wrap: wrap; /* Permite que los botones bajen de línea en celulares pequeños */
+  flex-wrap: wrap;
 }
 
 .btn-filtro {
-  background-color: transparent;
-  border: 2px solid #d81b60;
-  color: #d81b60;
-  padding: 8px 22px;
-  border-radius: 25px;
+  background-color: #ffffff;
+  border: none;
+  color: #666;
+  padding: 10px 26px;
+  border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+  /* El truco del 3D: Una sombra oscura abajo y una luz blanca arriba */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06), 
+             -4px -4px 10px rgba(255, 255, 255, 1);
 }
 
-/* El efecto cuando pasas el mouse o cuando el botón está activo */
-.btn-filtro:hover, 
+.btn-filtro:hover {
+  color: #d81b60;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.08), 
+             -6px -6px 15px rgba(255, 255, 255, 1);
+}
+
 .btn-filtro.activo {
   background-color: #d81b60;
   color: white;
-  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
+  /* Sombra interna para que parezca que el botón está presionado/hundido */
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.2),
+              inset -3px -3px 8px rgba(255, 255, 255, 0.2);
+  transform: translateY(1px);
 }
 
 /* --- SECCIÓN COTIZAR MINIMALISTA (INICIO) --- */
