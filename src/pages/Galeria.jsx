@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { galeriaDb } from '../Galeria.js'; // 👈 Importamos tu nueva base de datos
 
 export default function Galeria() {
   
@@ -22,27 +23,30 @@ export default function Galeria() {
           <span>Amena's</span>
         </Link>
         <div className="nav-links">
-          {/* Aquí el botón principal los regresa a tu portada */}
           <Link to="/">⬅ Volver al Inicio</Link>
         </div>
       </nav>
 
       {/* --- ENCABEZADO DE GALERÍA --- */}
-      <header className="seccion-galeria" style={{ paddingTop: '80px' }} data-aos="fade-up">
+      <header className="seccion-galeria" style={{ paddingTop: '80px', paddingBottom: '60px' }} data-aos="fade-up">
         <h1 className="titulo-seccion">Nuestro Portafolio</h1>
         <p className="subtitulo-galeria">
           Explora algunos de nuestros diseños personalizados. Cada pastel es único y horneado especialmente para ti. Si ves algo que te gusta, ¡tómale captura y mándanos un WhatsApp!
         </p>
 
-        {/* --- LA SÚPER CUADRÍCULA DE FOTOS --- */}
-        {/* Aquí puedes poner todas las fotos que quieras sin miedo a saturar */}
+        {/* --- LA MAGIA: CUADRÍCULA AUTOMÁTICA --- */}
         <div className="grid-galeria" style={{ marginTop: '50px' }}>
-          <img src="/images/personalizado_1.webp" alt="Pastel personalizado" className="foto-galeria" data-aos="zoom-in" />
-          <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500" alt="Pastel 2" className="foto-galeria" data-aos="zoom-in" data-aos-delay="100"/>
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500" alt="Pastel 3" className="foto-galeria" data-aos="zoom-in" data-aos-delay="200"/>
-          <img src="https://images.unsplash.com/photo-1562777717-cefc6691dcba?w=500" alt="Pastel 4" className="foto-galeria" data-aos="zoom-in" data-aos-delay="300"/>
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Pastel 5" className="foto-galeria" data-aos="zoom-in" data-aos-delay="400"/>
-          <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c390?w=500" alt="Pastel 6" className="foto-galeria" data-aos="zoom-in" data-aos-delay="500"/>
+          {galeriaDb.map((foto, index) => (
+            <img 
+              key={foto.id} 
+              src={foto.imagenUrl} 
+              alt={foto.alt} 
+              className="foto-galeria" 
+              data-aos="zoom-in" 
+              /* 👇 Truco Pro: Hace que las fotos vayan apareciendo en cascada, una por una */
+              data-aos-delay={(index % 6) * 100} 
+            />
+          ))}
         </div>
       </header>
 
@@ -53,7 +57,7 @@ export default function Galeria() {
 
       <footer className="footer-sencillo">
         <div className="footer-logo-container" style={{ marginBottom: '25px' }}>
-          <img src="./images/Logo/Logo.png" alt="Logo Amena's Pastelería" className="footer-logo" style={{ height: '90px', opacity: 0.9 }} />
+          <img src="/images/Logo/Logo.png" alt="Logo Amena's Pastelería" className="footer-logo" style={{ height: '90px', opacity: 0.9 }} />
         </div>
         <p className="copyright">© {new Date().getFullYear()} Amena's Pastelería. Todos los derechos reservados.</p>
       </footer>

@@ -3,11 +3,11 @@
 export const pastelesDb = [
   {
     id: 1,
-    nombre: "Pastel ",
+    nombre: "Pastel Personalizado",
     descripcion: "Descripción deliciosa de los ingredientes y el relleno.",
     precio: "0.00",
     porciones: "5 personas",
-    imagenUrl: '/images/Especialidades/id_1.webp'
+    imagenUrl: '/images/Especialidades/Pastel_Corazon.webp'
   },
   {
     id: 2,

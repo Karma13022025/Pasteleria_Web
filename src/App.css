@@ -118,7 +118,7 @@ h1, h2, h3, .nav-logo {
 
 .ola-decorativa {
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   overflow: hidden;
