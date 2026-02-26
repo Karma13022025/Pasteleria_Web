@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
-import { pastelesDb } from '../Especialidades'; 
+import { especialidadesDb } from '../Especialidades.js'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

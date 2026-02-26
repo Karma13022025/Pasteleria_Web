@@ -1,20 +1,38 @@
-// src/galeria.js
+// src/Galeria.js
 
 export const galeriaDb = [
-  {
-    id: 1,
-    imagenUrl: '/images/beisbol.webp',
-    alt: 'Pastel personalizado de béisbol'
-  },
-  {
-    id: 2,
-    imagenUrl: '/images/boda_1.webp', // Cambia esto por tus rutas reales
-    alt: 'Pastel de boda con flores'
-  },
-  {
-    id: 3,
-    imagenUrl: '/images/infantil_1.webp',
-    alt: 'Pastel infantil de vaca'
-  }
-  // ¡Copia y pega este bloque para agregar más!
+  { id: 1, imagenUrl: '/images/Pasteles/brownies_Halloween.webp', alt: 'Brownies temáticos de Halloween' },
+  { id: 2, imagenUrl: '/images/Pasteles/Cupcakes_flores.webp', alt: 'Cupcakes decorados con flores' },
+  { id: 3, imagenUrl: '/images/Pasteles/Cupcakes_navideños.webp', alt: 'Cupcakes con decoración navideña' },
+  { id: 4, imagenUrl: '/images/Pasteles/cupcakesFotball.webp', alt: 'Cupcakes temáticos de fútbol' },
+  { id: 5, imagenUrl: '/images/Pasteles/Galletas_animalitos.webp', alt: 'Galletas decoradas de animalitos' },
+  { id: 6, imagenUrl: '/images/Pasteles/Galletas_Conejo.webp', alt: 'Galletas en forma de conejo' },
+  { id: 7, imagenUrl: '/images/Pasteles/Galletas_hombre.webp', alt: 'Galletas decoradas' },
+  { id: 8, imagenUrl: '/images/Pasteles/Galletas_pez.webp', alt: 'Galletas en forma de pez' },
+  { id: 9, imagenUrl: '/images/Pasteles/Mini_brownies.webp', alt: 'Mini brownies decorados' },
+  { id: 10, imagenUrl: '/images/Pasteles/MiniPays.webp', alt: 'Mini pays surtidos' },
+  { id: 11, imagenUrl: '/images/Pasteles/Pastel_actriz.webp', alt: 'Pastel personalizado temática actriz' },
+  { id: 12, imagenUrl: '/images/Pasteles/Pastel_anime.webp', alt: 'Pastel con temática de anime' },
+  { id: 13, imagenUrl: '/images/Pasteles/Pastel_bolaBeisbol.webp', alt: 'Pastel en forma de bola de béisbol' },
+  { id: 14, imagenUrl: '/images/Pasteles/Pastel_cars_chiquito.webp', alt: 'Pastel pequeño de Cars' },
+  { id: 15, imagenUrl: '/images/Pasteles/pastel_cars.webp', alt: 'Pastel temático de Cars' },
+  { id: 16, imagenUrl: '/images/Pasteles/Pastel_corazon_rosa.webp', alt: 'Pastel en forma de corazón color rosa' },
+  { id: 17, imagenUrl: '/images/Pasteles/Pastel_Dancing_queen.webp', alt: 'Pastel temática Dancing Queen' },
+  { id: 18, imagenUrl: '/images/Pasteles/Pastel_Golden.webp', alt: 'Pastel elegante con toques dorados' },
+  { id: 19, imagenUrl: '/images/Pasteles/Pastel_Manzanas.webp', alt: 'Pastel decorado de manzanas' },
+  { id: 20, imagenUrl: '/images/Pasteles/Pastel_Matilda.webp', alt: 'Pastel de chocolate estilo Matilda' },
+  { id: 21, imagenUrl: '/images/Pasteles/Pastel_monstruo.webp', alt: 'Pastel divertido de monstruo' },
+  { id: 22, imagenUrl: '/images/Pasteles/pastel_OneDirection.webp', alt: 'Pastel de One Direction' },
+  { id: 23, imagenUrl: '/images/Pasteles/Pastel_papa.webp', alt: 'Pastel especial para papá' },
+  { id: 24, imagenUrl: '/images/Pasteles/Pastel_Sabrina.webp', alt: 'Pastel temática Sabrina' },
+  { id: 25, imagenUrl: '/images/Pasteles/Pastel_Tarea.webp', alt: 'Pastel divertido de tarea' },
+  { id: 26, imagenUrl: '/images/Pasteles/Pastel_Volver_Al_Futuro.webp', alt: 'Pastel de Volver al Futuro' },
+  { id: 27, imagenUrl: '/images/Pasteles/PastelHB_azul.webp', alt: 'Pastel de cumpleaños en tonos azules' },
+  { id: 28, imagenUrl: '/images/Pasteles/PastelHB_BobEsponja.webp', alt: 'Pastel de cumpleaños de Bob Esponja' },
+  { id: 29, imagenUrl: '/images/Pasteles/PastelHB_chiquito.webp', alt: 'Pastel de cumpleaños pequeño' },
+  { id: 30, imagenUrl: '/images/Pasteles/PastelHB_Felipe.webp', alt: 'Pastel de cumpleaños para Felipe' },
+  { id: 31, imagenUrl: '/images/Pasteles/PastelHB_hanna.webp', alt: 'Pastel de cumpleaños para Hanna' },
+  { id: 32, imagenUrl: '/images/Pasteles/PastelHB_negro.webp', alt: 'Pastel de cumpleaños elegante en color negro' },
+  { id: 33, imagenUrl: '/images/Pasteles/PastelRojo_corazon.webp', alt: 'Pastel rojo en forma de corazón' },
+  { id: 34, imagenUrl: '/images/Pasteles/personalizado_Rapunzel.webp', alt: 'Pastel personalizado de Rapunzel' }
 ];

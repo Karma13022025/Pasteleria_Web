@@ -1,6 +1,6 @@
 // src/pasteles.js
 
-export const pastelesDb = [
+export const especialidadesDb = [
   {
     id: 1,
     nombre: "Pastel Personalizado",

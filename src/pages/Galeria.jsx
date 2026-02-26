@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { galeriaDb } from '../Galeria.js'; // 👈 Importamos tu nueva base de datos
+import { galeriaDb } from '../Galeria'; // 👈 Importamos tu nueva base de datos
 
 export default function Galeria() {
   
