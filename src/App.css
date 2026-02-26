@@ -101,6 +101,17 @@ h1, h2, h3, .nav-logo {
   color: white;
   padding: 0 20px;
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    /* Al darle un número fijo, el navegador ya no puede hacer que "salte" */
+    height: 450px; 
+    min-height: 450px;
+    
+    /* Previene que la imagen intente reacomodarse al hacer scroll */
+    background-attachment: scroll; 
+  }
+}
 .hero-contenido {
   margin-top: -80px; /* Esto jala todo el bloque hacia arriba. */
   /* Juega con este número: -50px sube poquito, -120px sube mucho. */
