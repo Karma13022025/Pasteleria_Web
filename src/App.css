@@ -896,6 +896,7 @@ h1, h2, h3, .nav-logo {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   background-color: #f8f8f8;
+  margin-top: -40px;
 }
 
 /* La capa blanca semitransparente con el texto */
