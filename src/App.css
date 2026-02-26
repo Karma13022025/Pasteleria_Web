@@ -28,6 +28,10 @@ h1, h2, h3, .nav-logo {
   margin-top: 0;
 }
 
+.nav-links a, .btn-primario, .btn-filtro {
+  letter-spacing: 0.5px;
+}
+
 .titulo-seccion {
   text-align: center;
   color: #d81b60;
