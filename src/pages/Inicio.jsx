@@ -1,15 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { especialidadesDb } from '../Especialidades.js';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 export default function Inicio() {
   const carruselRef = useRef(null);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
 
   const moverIzq = () => carruselRef.current?.scrollBy({ left: -340, behavior: 'smooth' });
   const moverDer = () => carruselRef.current?.scrollBy({ left: 340, behavior: 'smooth' });
@@ -69,7 +63,7 @@ export default function Inicio() {
       </header>
 
       {/* --- MENÚ PRINCIPAL --- */}
-      <main id="catalogo" className="contenedor-catalogo" data-aos="fade-up">
+      <main id="catalogo" className="contenedor-catalogo">
         <h2 className="titulo-seccion">Nuestras Especialidades</h2>
         <div className="carrusel-wrapper">
           <button className="flecha-carrusel izq" onClick={moverIzq}>❮</button>
@@ -89,7 +83,7 @@ export default function Inicio() {
       </main>
 
       {/* --- SECCIÓN COTIZAR (MINIMALISTA) --- */}
-      <section className="seccion-cotizar-minimalista" data-aos="fade-up">
+      <section className="seccion-cotizar-minimalista">
         <hr className="linea-divisora" />
 
         <h2 className="titulo-minimalista-cotizar">¿Tienes un diseño único en mente?</h2>
@@ -103,20 +97,20 @@ export default function Inicio() {
       </section>
 
       {/* --- CÓMO PEDIR --- */}
-      <section className="seccion-pasos" data-aos="fade-up">
+      <section className="seccion-pasos">
         <h2 className="titulo-seccion">¿Cómo hacer tu pedido?</h2>
         <div className="grid-pasos">
-          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="100">
+          <div className="tarjeta-paso">
             <div className="icono-paso">🎂</div>
             <h3>1. Elige tu diseño</h3>
             <p>Revisa nuestro menú o la galería para inspirarte con tu idea.</p>
           </div>
-          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="200">
+          <div className="tarjeta-paso">
             <div className="icono-paso">💬</div>
             <h3>2. Escríbenos</h3>
             <p>Contáctanos por WhatsApp para afinar detalles y confirmar.</p>
           </div>
-          <div className="tarjeta-paso" data-aos="zoom-in" data-aos-delay="300">
+          <div className="tarjeta-paso">
             <div className="icono-paso">📍</div>
             <h3>3. Recoge y disfruta</h3>
             <p>Pasa por tu pastel a nuestra sucursal. ¡Listo para sorprender!</p>
@@ -125,7 +119,7 @@ export default function Inicio() {
       </section>
 
       {/* --- TRABAJOS PERSONALIZADOS (REGRESÓ AL INICIO) --- */}
-      <section className="seccion-galeria" data-aos="fade-up" style={{ paddingBottom: '40px' }}>
+      <section className="seccion-galeria" style={{ paddingBottom: '40px' }}>
         <h2 className="titulo-seccion">Trabajos Personalizados</h2>
         <div className="grid-galeria">
           <img src="/images/Personalizados/Pastel_vaca.webp" alt="Pastel personalizado temático animales" className="foto-galeria" loading="lazy" />
@@ -139,12 +133,12 @@ export default function Inicio() {
       </section>
 
       {/* --- SECCIÓN DE RESEÑAS (NUEVO) --- */}
-      <section className="seccion-resenas" id="resenas" data-aos="fade-up">
+      <section className="seccion-resenas" id="resenas">
         <h2 className="titulo-seccion">Lo que dicen nuestros clientes</h2>
 
         <div className="contenedor-tarjetas">
           {resenasDb.map((resena) => (
-            <div key={resena.id} className="tarjeta-resena" data-aos="flip-up">
+            <div key={resena.id} className="tarjeta-resena">
               <div className="estrellas-resena">{resena.estrellas}</div>
               <p className="texto-resena">"{resena.texto}"</p>
               <p className="autor-resena">- {resena.nombre}</p>
@@ -175,7 +169,7 @@ export default function Inicio() {
 
           {/* Columna Derecha: Mapa Próximamente */}
           <div className="footer-der">
-            <div className="mapa-cuadrado" data-aos="fade-in">
+            <div className="mapa-cuadrado">
               <div className="mapa-overlay">
                 <span className="icono-pin">📍</span>
                 <p>Próximamente sucursal fisica en<br /><strong> Saltillo </strong></p>
