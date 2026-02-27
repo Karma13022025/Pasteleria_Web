@@ -83,7 +83,7 @@ export default function Inicio() {
                   className="foto-pastel"
                   /* LA MAGIA SUCEDE AQUÍ: */
                   /* Si es el primer pastel (index 0), máxima prioridad. Si no, prioridad normal */
-                  fetchpriority={index === 0 ? "high" : "auto"}
+                  fetchpriority={index <= 1 ? "high" : "auto"}
                   /* Si es el primer pastel, carga inmediata. Si no, carga diferida (lazy) */
                   loading={index === 0 ? "eager" : "lazy"}
                 />
