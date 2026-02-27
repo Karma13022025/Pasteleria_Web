@@ -53,13 +53,6 @@ export default function Inicio() {
         </div>
       </nav>
 
-      <img
-        src="/images/fondo_encabezado.webp"
-        style={{ display: 'none' }}
-        fetchpriority="high"
-        alt=""
-      />
-
       {/* --- PORTADA --- */}
       <header className="hero-section">
         <div className="hero-contenido" style={{ marginTop: '-80px' }}>
