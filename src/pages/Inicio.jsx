@@ -76,7 +76,7 @@ export default function Inicio() {
           <div className="carrusel-pasteles" ref={carruselRef}>
             {especialidadesDb.map((pastel) => (
               <div key={pastel.id} className="tarjeta-pastel">
-                <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" loading="lazy" />
+                <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" />
                 <div className="info-pastel">
                   <h3>{pastel.nombre}</h3>
                   <p className="desc">{pastel.descripcion}</p>
