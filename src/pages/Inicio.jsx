@@ -154,7 +154,7 @@ export default function Inicio() {
       </section>
 
       {/* --- WHATSAPP & FOOTER --- */}
-      <a href={`https://wa.me/528442075351?text=${mensajeWhatsApp}`} className="whatsapp-btn" target="_blank" rel="noreferrer">
+      <a href={`https://wa.me/528442075351?text=${mensajeWhatsApp}`} className="whatsapp-btn" target="_blank" rel="noreferrer" aria-label="Enviar mensaje por WhatsApp">
         <span>💬 Preguntar por WhatsApp</span>
       </a>
 
