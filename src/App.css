@@ -673,7 +673,7 @@ h1, h2, h3, .nav-logo {
 .seccion-cotizar-minimalista {
   text-align: center;
   padding: 0px 20px;
-  margin: 20px auto;
+  margin: 0px auto;
   max-width: 800px;
   background-color: transparent; /* Sin fondos, puro espacio limpio */
 }
