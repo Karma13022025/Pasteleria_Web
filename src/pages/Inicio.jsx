@@ -74,9 +74,19 @@ export default function Inicio() {
         <div className="carrusel-wrapper">
           <button className="flecha-carrusel izq" onClick={moverIzq}>❮</button>
           <div className="carrusel-pasteles" ref={carruselRef}>
-            {especialidadesDb.map((pastel) => (
+            {/* Agregamos 'index' como segundo parámetro del map */}
+            {especialidadesDb.map((pastel, index) => (
               <div key={pastel.id} className="tarjeta-pastel">
-                <img src={pastel.imagenUrl} alt={`Pastel ${pastel.nombre}`} className="foto-pastel" />
+                <img
+                  src={pastel.imagenUrl}
+                  alt={`Pastel ${pastel.nombre}`}
+                  className="foto-pastel"
+                  /* LA MAGIA SUCEDE AQUÍ: */
+                  /* Si es el primer pastel (index 0), máxima prioridad. Si no, prioridad normal */
+                  fetchpriority={index === 0 ? "high" : "auto"}
+                  /* Si es el primer pastel, carga inmediata. Si no, carga diferida (lazy) */
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
                 <div className="info-pastel">
                   <h3>{pastel.nombre}</h3>
                   <p className="desc">{pastel.descripcion}</p>
@@ -87,7 +97,6 @@ export default function Inicio() {
           <button className="flecha-carrusel der" onClick={moverDer}>❯</button>
         </div>
       </main>
-
       {/* --- SECCIÓN COTIZAR (MINIMALISTA) --- */}
       <section className="seccion-cotizar-minimalista" data-aos="fade-up">
         <hr className="linea-divisora" />
