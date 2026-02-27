@@ -7,6 +7,24 @@ html {
   scroll-padding-top: 80px; /* Evita que el menú fijo tape los títulos al hacer clic */
 }
 
+/* Aquí cargas tu fuente Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/ruta-a-tus-fuentes/Montserrat-Regular.woff2') format('woff2'); /* Tu ruta puede variar */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ✨ ¡Aquí va la propiedad! ✨ */
+}
+
+/* Aquí cargas tu fuente Playfair Display */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/ruta-a-tus-fuentes/PlayfairDisplay-Bold.woff2') format('woff2'); /* Tu ruta puede variar */
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* ✨ ¡Aquí también! ✨ */
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
