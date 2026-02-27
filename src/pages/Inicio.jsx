@@ -55,7 +55,7 @@ export default function Inicio() {
 
       {/* --- PORTADA --- */}
       <header className="hero-section">
-        <div className="hero-contenido" data-aos="zoom-in" style={{ marginTop: '-80px' }}>
+        <div className="hero-contenido" style={{ marginTop: '-80px' }}>
           <h1>Amena's Pastelería</h1>
           <p>Horneando momentos inolvidables con los mejores ingredientes.</p>
           <Link to="/cotizar" className="btn-primario btn-latido">✨ Armar mi pastel</Link>
