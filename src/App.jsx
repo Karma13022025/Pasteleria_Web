@@ -5,6 +5,8 @@ import Galeria from './pages/Galeria';
 import Construccion from './pages/Construccion';
 import Cotizador from './pages/Cotizador';
 import { Analytics } from '@vercel/analytics/react';
+import '@fontsource/playfair-display';
+import '@fontsource/montserrat';
 import './App.css'; // Mantenemos tus estilos globales y profesionales
 
 export default function App() {
