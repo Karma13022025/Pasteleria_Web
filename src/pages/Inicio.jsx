@@ -107,8 +107,10 @@ export default function Inicio() {
           </div>
           <div className="tarjeta-paso">
             <div className="icono-paso">💬</div>
-            <h3>2. Escríbenos</h3>
-            <p>Contáctanos por WhatsApp para afinar detalles y confirmar.</p>
+            <h3>2. Contáctanos</h3>
+            <p>
+              Contáctanos por WhatsApp o arma tu pedido en nuestra <Link to="/cotizar" style={{ color: '#d81b60', fontWeight: 'bold', textDecoration: 'none' }}>sección de crear pedido personalizado</Link>.
+            </p>
           </div>
           <div className="tarjeta-paso">
             <div className="icono-paso">📍</div>
