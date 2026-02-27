@@ -54,7 +54,7 @@ export default function Inicio() {
       </nav>
 
       <img
-        src="/images/fondo_encabezado.jpg"
+        src="/images/fondo_encabezado.webp"
         style={{ display: 'none' }}
         fetchpriority="high"
         alt=""
