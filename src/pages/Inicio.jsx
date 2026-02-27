@@ -178,18 +178,9 @@ export default function Inicio() {
             <div className="mapa-cuadrado" data-aos="fade-in">
               <div className="mapa-overlay">
                 <span className="icono-pin">📍</span>
-                <p>Próximamente en<br /><strong> Saltillo </strong></p>
+                <p>Próximamente sucursal fisica en<br /><strong> Saltillo </strong></p>
               </div>
               {/* Mapa real de fondo, en blanco y negro */}
-              <iframe
-                title="Ubicación Ramos Arizpe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115132.86016668749!2d-101.0336214!3d25.5411786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868813374b5c7f89%3A0x868ad1e888636f!2sRamos%20Arizpe%2C%20Coah.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'grayscale(100%) opacity(0.5)' }}
-                allowFullScreen=""
-                loading="lazy">
-              </iframe>
             </div>
           </div>
 
