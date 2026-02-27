@@ -15,7 +15,7 @@ export default function Galeria() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const mensajeWhatsApp = encodeURI("¡Hola Amena's Pastelería! Vi una foto en su galería y me encantaría cotizar un pastel así. ✨");
+  const mensajeWhatsApp = encodeURI("¡Hola Amena's Pastelería! Vi su página web y me gustaría pedir información. 🍰");
 
   const fotosFiltradas = filtro === 'Todos' 
     ? galeriaDb 
