@@ -87,15 +87,17 @@ h1, h2, h3, .nav-logo {
    ========================================= */
 .hero-section {
   position: relative;
-  height: 60svh;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-  background: linear-gradient(rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.6)), url('/images/fondo_encabezado.webp') center/cover;
+  overflow: hidden;
+  /* Quita el background-image de aquí */
+}
+.hero-bg-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  /* Aquí puedes aplicar el filtro oscuro si quieres */
+  filter: brightness(0.7); 
 }
 
 @media (max-width: 768px) {
