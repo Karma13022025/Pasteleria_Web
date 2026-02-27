@@ -55,12 +55,6 @@ export default function Inicio() {
 
       {/* --- PORTADA --- */}
       <header className="hero-section">
-        <img
-          src="/images/fondo_encabezado.webp"
-          className="hero-bg-img"
-          alt=""
-          fetchpriority="high"
-        />
         <div className="hero-contenido" style={{ marginTop: '-80px' }}>
           <h1>Amena's Pastelería</h1>
           <p>Horneando momentos inolvidables con los mejores ingredientes.</p>
