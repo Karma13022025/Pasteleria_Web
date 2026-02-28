@@ -115,7 +115,7 @@ export default function Inicio() {
           <div className="tarjeta-paso">
             <div className="icono-paso">📍</div>
             <h3>3. Recoge y disfruta</h3>
-            <p>Pasa por tu pastel a nuestra sucursal. ¡Listo para sorprender!</p>
+            <p>Pasa por tu pastel o agenda envio a domicilio (Sujeto a disponibilidad). ¡Listo para sorprender!</p>
           </div>
         </div>
       </section>
